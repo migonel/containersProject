@@ -6,8 +6,8 @@ steps:
       scriptType: ps
       scriptLocation: inlineScript
       inlineScript: |
-        $resourceGroupName = '{{parameters.var_resourceGroupName}}'
-        $location = '{{parameters.var_location}}'
+        $resourceGroupName = '{{parameters.resourceGroupName}}'
+        $location = '{{parameters.location}}'
 
         Write Host "ResourceGroupName: $resourceGroupName"
         Write Host "Location: $location"

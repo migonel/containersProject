@@ -1,0 +1,10 @@
+variables:
+  
+  #Subscription details
+  azureConnection: "azureConnection"
+
+  #Location
+  var_location: "eastus"
+
+  #Resource Group
+  var_resourceGroupName: "containersProject8"

@@ -1,0 +1,22 @@
+trigger:
+- none
+
+stages:
+  - stage: "POC"
+    variables:
+    - template: ${{variables['System.DefaultWorkingDirectory']}}/.github/variables/infra.yml
+
+    jobs:
+    - deployment: "Deploy Infra"
+      environment: 'POC'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              
+              #Deploy Resource Group
+              - template: ${{variables['System.DefaultWorkingDirectory']}}/.github/templates/infra.yml
+                parameters:
+                  azureConnection: $(azureConnection)
+                  resourceGroupName: $(var_resourceGroupName)
+                  location: $(var_location)
