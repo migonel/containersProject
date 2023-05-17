@@ -7,7 +7,7 @@ stages:
     - template: ${{variables['System.DefaultWorkingDirectory']}}/variables/infra.yml
 
     jobs:
-    - deployment: "Deploy Infra"
+    - deployment: 'Deploy Infra'
       environment: 'POC'
       strategy:
         runOnce:
