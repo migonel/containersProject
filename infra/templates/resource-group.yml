@@ -12,4 +12,4 @@ steps:
         Write-Host "ResourceGroupName: $resourceGroupName"
         Write-Host "Location: $location"
 
-        az group create --Name $resourceGroupName --Location $location
+        az group create --name $resourceGroupName --location $location
