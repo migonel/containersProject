@@ -7,7 +7,7 @@ stages:
     - template: ${{variables['System.DefaultWorkingDirectory']}}/variables/infra.yml
 
     jobs:
-    - deployment: 'DeployInfra'
+    - deployment: 'Deploy'
       environment: 'POC'
       strategy:
         runOnce:
@@ -17,6 +17,6 @@ stages:
               #Deploy Resource Group
               - template: ${{variables['System.DefaultWorkingDirectory']}}/infra/templates/resource-group.yml
                 parameters:
-                  azureConnection: $(azureConnection)
+                  azureConnection: ${{variables.azureConnection}}
                   resourceGroupName: $(var_resourceGroupName)
                   location: $(var_location)
