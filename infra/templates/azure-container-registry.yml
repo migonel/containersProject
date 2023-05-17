@@ -9,7 +9,7 @@ steps:
         $resourceGroupName = '${{parameters.resourceGroupName}}'
         $location = '${{parameters.location}}'
         $acrName = '${{parameters.acrName}}'
-        $acrSKU = ${{parameters.acrSKU}}'
+        $acrSKU = '${{parameters.acrSKU}}'
 
         Write-Host "ResourceGroupName: $resourceGroupName"
         Write-Host "Location: $location"
