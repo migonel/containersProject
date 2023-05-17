@@ -8,3 +8,7 @@ variables:
 
   #Resource Group
   var_resourceGroupName: "containersProject8"
+
+  #ACR
+  var_acrName: 'containerRegistry8'
+  var_acrSKU: 'Basic'

@@ -1,0 +1,19 @@
+steps:
+  - task: AzureCLI@2
+    displayName: 'Deploy Azure Container Registry'
+    inputs:
+      azureSubscription: '${{parameters.azureConnection}}'
+      scriptType: pscore
+      scriptLocation: inlineScript
+      inlineScript: |
+        $resourceGroupName = '${{parameters.resourceGroupName}}'
+        $location = '${{parameters.location}}'
+        $acrName = '${{parameters.acrName}}'
+        $acrSKU = ${{parameters.acrSKU}}'
+
+        Write-Host "ResourceGroupName: $resourceGroupName"
+        Write-Host "Location: $location"
+        Write-Host "ACR: $acrName"
+        Write-Host "sku: $acrSKU"
+
+        az acr create --resource-group $resourceGroupName --name $acrName --sku $acrSKU
