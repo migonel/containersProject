@@ -3,7 +3,7 @@ steps:
     displayName: 'Deploy Resource Group'
     inputs:
       azureSubscription: '${{parameters.azureConnection}}'
-      scriptType: ps
+      scriptType: pscore
       scriptLocation: inlineScript
       inlineScript: |
         $resourceGroupName = '{{parameters.resourceGroupName}}'
