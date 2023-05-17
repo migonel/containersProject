@@ -10,5 +10,5 @@ variables:
   var_resourceGroupName: "containersProject8"
 
   #ACR
-  var_acrName: 'myacr88'
+  var_acrName: 'cpacr08'
   var_acrSKU: 'Basic'
