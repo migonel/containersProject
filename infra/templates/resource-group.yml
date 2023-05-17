@@ -6,8 +6,8 @@ steps:
       scriptType: pscore
       scriptLocation: inlineScript
       inlineScript: |
-        $resourceGroupName = '{{parameters.resourceGroupName}}'
-        $location = '{{parameters.location}}'
+        $resourceGroupName = '${{parameters.resourceGroupName}}'
+        $location = '${{parameters.location}}'
 
         Write-Host "ResourceGroupName: $resourceGroupName"
         Write-Host "Location: $location"
