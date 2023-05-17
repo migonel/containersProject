@@ -9,7 +9,7 @@ steps:
         $resourceGroupName = '{{parameters.resourceGroupName}}'
         $location = '{{parameters.location}}'
 
-        Write Host "ResourceGroupName: $resourceGroupName"
-        Write Host "Location: $location"
+        Write-Host "ResourceGroupName: $resourceGroupName"
+        Write-Host "Location: $location"
 
         az group create --Name $resourceGroupName --Location $location
