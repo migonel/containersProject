@@ -1,0 +1,15 @@
+steps:
+  - task: AzureCLI@2
+    displayName: 'Deploy Resource Group'
+    inputs:
+      azureSubscription: '${{parameters.azureConnection}}'
+      scriptType: ps
+      scriptLocation: inlineScript
+      inlineScript: |
+        $resourceGroupName = '{{parameters.var_resourceGroupName}}'
+        $location = '{{parameters.var_location}}'
+
+        Write Host "ResourceGroupName: $resourceGroupName"
+        Write Host "Location: $location"
+
+        New-AzResourceGroup --Name $resourceGroupName --Location $location
