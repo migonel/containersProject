@@ -15,7 +15,7 @@ stages:
             steps:
               
               #Deploy Resource Group
-              - template: ${{variables['System.DefaultWorkingDirectory']}}/.github/templates/infra.yml
+              - template: ${{variables['System.DefaultWorkingDirectory']}}/.github/infra/templates/resource-group.yml
                 parameters:
                   azureConnection: $(azureConnection)
                   resourceGroupName: $(var_resourceGroupName)
