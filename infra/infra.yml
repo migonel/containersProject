@@ -2,7 +2,7 @@ trigger:
 - none
 
 stages:
-  - stage: "POC"
+  - stage: 'POC'
     variables:
     - template: ${{variables['System.DefaultWorkingDirectory']}}/variables/infra.yml
 
