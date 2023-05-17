@@ -1,6 +1,9 @@
 trigger:
 - none
 
+pool:
+  name: Default
+
 stages:
   - stage: 'POC'
     variables:
