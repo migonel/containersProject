@@ -18,6 +18,7 @@ stages:
             steps:
 
               - checkout: self
+                submodules: true
 
               #build image from dockerfile
               - task: Docker@2
