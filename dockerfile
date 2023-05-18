@@ -30,7 +30,7 @@ COPY /mysite /mysite
 
 
 # Expose the necessary port(s)
-EXPOSE 8000
+EXPOSE 80
 
 # Specify the command to run your Django application
 CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
