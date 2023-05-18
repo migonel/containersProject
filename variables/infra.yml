@@ -18,6 +18,6 @@ variables:
   var_aspName: 'aspContProj8'
   var_aspSKU: 'FREE'
 
-  #Web App for Containers
+  #Web App for Containers  --docker-registry-server-user $acrUser --docker-registry-server-password $acrPass
   var_webappName: "djangoApp8"
   var_containerImageName: 'cpacr08.azurecr.io/djangoimage:latest'

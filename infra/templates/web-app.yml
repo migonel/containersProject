@@ -18,4 +18,4 @@ steps:
         Write-Host "Web App Name: $webappName"
         Write-Host "Container Image: $containerImageName"
 
-        az webapp create --resource-group $resourceGroupName --name $webappName --plan $aspName --deployment-container-image-name $containerImageName
+        az webapp create --resource-group $resourceGroupName --name $webappName --plan $aspName --deployment-container-image-name $containerImageName 

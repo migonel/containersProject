@@ -16,4 +16,4 @@ steps:
         Write-Host "ACR: $aspName"
         Write-Host "sku: $aspSKU"
 
-        az appservice plan create --resource-group $resourceGroupName --name $aspName --sku $aspSKU
+        az appservice plan create --resource-group $resourceGroupName --name $aspName --sku $aspSKU --is-linux
