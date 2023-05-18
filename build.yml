@@ -21,7 +21,7 @@ stages:
               - task: Docker@2
                 inputs:
                   containerRegistry: ${{variables.acrConnection}}
-                  repository: $(var_acrName)
+                  repository: 'djangoImage'
                   command: 'build'
                   Dockerfile: $(Build.SourcesDirectory)/dockerfile
                 displayName: 'Docker image build'
@@ -30,6 +30,6 @@ stages:
               - task: Docker@2
                 inputs:
                   containerRegistry: ${{variables.acrConnection}}
-                  repository: $(var_acrName)
+                  repository: 'djangoImage'
                   command: 'push'
                 displayName: 'Docker image push'
