@@ -23,7 +23,7 @@ stages:
                   containerRegistry: ${{variables.acrConnection}}
                   repository: $(var_acrName)
                   command: 'build'
-                  Dockerfile: './dockerfile'
+                  Dockerfile: 'https://github.com/migonel/containersProject/blob/master/dockerfile'
                 displayName: 'Docker image build'
 
               #push image to ACR
