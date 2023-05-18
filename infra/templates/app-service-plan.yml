@@ -1,0 +1,19 @@
+steps:
+  - task: AzureCLI@2
+    displayName: 'Deploy App Service Plan'
+    inputs:
+      azureSubscription: '${{parameters.azureConnection}}'
+      scriptType: pscore
+      scriptLocation: inlineScript
+      inlineScript: |
+        $resourceGroupName = '${{parameters.resourceGroupName}}'
+        $location = '${{parameters.location}}'
+        $aspName = '${{parameters.aspName}}'
+        $aspSKU = '${{parameters.aspSKU}}'
+
+        Write-Host "ResourceGroupName: $resourceGroupName"
+        Write-Host "Location: $location"
+        Write-Host "ACR: $aspName"
+        Write-Host "sku: $aspSKU"
+
+        az appservice plan create --resource-group $resourceGroupName --name $aspName --sku $aspSKU

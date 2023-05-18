@@ -10,6 +10,12 @@ variables:
   #Resource Group
   var_resourceGroupName: "containersProject8"
 
-  #ACR
+  #Azure Container Registry
   var_acrName: 'cpacr08'
   var_acrSKU: 'Basic'
+
+  #App Service Plan
+  var_aspName: 'aspContProj8'
+  var_aspSKU: 'FREE'
+
+  #Web App for Containers

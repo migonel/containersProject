@@ -25,10 +25,18 @@ stages:
               #     location: $(var_location)
               
                             #Deploy Resource Group
-              - template: ${{variables['System.DefaultWorkingDirectory']}}/infra/templates/azure-container-registry.yml
+              # - template: ${{variables['System.DefaultWorkingDirectory']}}/infra/templates/azure-container-registry.yml
+              #   parameters:
+              #     azureConnection: ${{variables.azureConnection}}
+              #     resourceGroupName: $(var_resourceGroupName)
+              #     location: $(var_location)
+              #     acrName: $(var_acrName)
+              #     acrSKU: $(var_acrSKU)
+
+              - template: ${{variables['System.DefaultWorkingDirectory']}}/infra/templates/app-service-plan.yml
                 parameters:
                   azureConnection: ${{variables.azureConnection}}
                   resourceGroupName: $(var_resourceGroupName)
                   location: $(var_location)
-                  acrName: $(var_acrName)
-                  acrSKU: $(var_acrSKU)
+                  aspName: $(var_aspName)
+                  aspSKU: $(var_aspSKU)
