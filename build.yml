@@ -1,0 +1,35 @@
+trigger:
+- none
+
+pool:
+  name: Self-Hosted
+
+stages:
+  - stage: 'POC'
+    variables:
+    - template: ${{variables['System.DefaultWorkingDirectory']}}/variables/infra.yml
+
+    jobs:
+    - deployment: 'Deploy'
+      environment: 'POC'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+
+              #build image from dockerfile
+              - task: Docker@2
+                inputs:
+                  containerRegistry: $(var_acrName)
+                  repository: ${{variables.acrConnection}}
+                  command: 'build'
+                  Dockerfile: 'dockerfile'
+                displayName: 'Docker image build'
+
+              #push image to ACR
+              - task: Docker@2
+                inputs:
+                  containerRegistry: $(var_acrName)
+                  repository: ${{variables.acrConnection}}
+                  command: 'push'
+                displayName: 'Docker image push'
