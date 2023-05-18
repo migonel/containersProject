@@ -20,16 +20,16 @@ stages:
               #build image from dockerfile
               - task: Docker@2
                 inputs:
-                  containerRegistry: $(var_acrName)
-                  repository: ${{variables.acrConnection}}
+                  containerRegistry: ${{variables.acrConnection}}
+                  repository: $(var_acrName)
                   command: 'build'
-                  Dockerfile: 'dockerfile'
+                  Dockerfile: '**/Dockerfile'
                 displayName: 'Docker image build'
 
               #push image to ACR
               - task: Docker@2
                 inputs:
-                  containerRegistry: $(var_acrName)
-                  repository: ${{variables.acrConnection}}
+                  containerRegistry: ${{variables.acrConnection}}
+                  repository: $(var_acrName)
                   command: 'push'
                 displayName: 'Docker image push'
