@@ -17,6 +17,8 @@ stages:
           deploy:
             steps:
 
+              - checkout: self
+
               #build image from dockerfile
               - task: Docker@2
                 inputs:
