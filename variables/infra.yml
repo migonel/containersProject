@@ -2,6 +2,7 @@ variables:
   
   #Subscription details
   azureConnection: "azureConnection"
+  acrConnection: "acrConnection"
 
   #Location
   var_location: "eastus"
