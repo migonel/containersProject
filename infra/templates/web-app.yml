@@ -1,0 +1,21 @@
+steps:
+  - task: AzureCLI@2
+    displayName: 'Deploy Web App'
+    inputs:
+      azureSubscription: '${{parameters.azureConnection}}'
+      scriptType: pscore
+      scriptLocation: inlineScript
+      inlineScript: |
+        $resourceGroupName = '${{parameters.resourceGroupName}}'
+        $location = '${{parameters.location}}'
+        $aspName = '${{parameters.aspName}}'
+        $webappName = '${{parameters.webappName}}'
+        $containerImageName = '${{parameters.containerImageName}}'
+
+        Write-Host "ResourceGroupName: $resourceGroupName"
+        Write-Host "Location: $location"
+        Write-Host "ASR: $aspName"
+        Write-Host "Web App Name: $webappName"
+        Write-Host "Container Image: $containerImageName"
+
+        az webapp create --resource-group $resourceGroupName --name $webappName --plan $aspName --deployment-container-image-name $containerImageName

@@ -33,6 +33,7 @@ stages:
               #     acrName: $(var_acrName)
               #     acrSKU: $(var_acrSKU)
 
+              #Deploy App Service Plan Free tier 
               - template: ${{variables['System.DefaultWorkingDirectory']}}/infra/templates/app-service-plan.yml
                 parameters:
                   azureConnection: ${{variables.azureConnection}}
@@ -40,3 +41,15 @@ stages:
                   location: $(var_location)
                   aspName: $(var_aspName)
                   aspSKU: $(var_aspSKU)
+              
+
+
+              #Deploy Web App for Containers
+              - template: ${{variables['System.DefaultWorkingDirectory']}}/infra/templates/web-app.yml
+                parameters:
+                  azureConnection: ${{variables.azureConnection}}
+                  resourceGroupName: $(var_resourceGroupName)
+                  location: $(var_location)
+                  aspName: $(var_aspName)
+                  webappName: $(var_webappName)
+                  containerImageName: $(var_containerImageName)

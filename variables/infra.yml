@@ -19,3 +19,5 @@ variables:
   var_aspSKU: 'FREE'
 
   #Web App for Containers
+  var_webappName: "djangoApp8"
+  var_containerImageName: 'cpacr08.azurecr.io/djangoimage:latest'
