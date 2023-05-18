@@ -3,6 +3,7 @@ variables:
   #Subscription details
   azureConnection: "azureConnection"
   acrConnection: "acrConnection"
+  var_subscriptionId: '48f58ec1-9198-4941-8671-88ec1fbdca4f'
 
   #Location
   var_location: "eastus"
@@ -20,4 +21,4 @@ variables:
 
   #Web App for Containers  --docker-registry-server-user $acrUser --docker-registry-server-password $acrPass
   var_webappName: "djangoApp8"
-  var_containerImageName: 'cpacr08.azurecr.io/djangoimage:latest'
+  var_containerImageName: 'cpacr08.azurecr.io/djangoimage:35'

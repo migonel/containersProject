@@ -33,4 +33,4 @@ COPY /mysite /mysite
 EXPOSE 8000
 
 # Specify the command to run your Django application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
