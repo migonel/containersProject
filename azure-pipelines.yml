@@ -4,24 +4,32 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- checkout: self
-  fetchDepth: 0
+stages:
+  - stage: 'POC'
+    jobs:
+    - deployment: 'SonarCloud'
+      environment: 'POC'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - checkout: self
+              fetchDepth: 0
 
-- task: SonarCloudPrepare@1
-  inputs:
-    SonarCloud: 'SonarCloud'
-    organization: 'lmigone'
-    scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'lmigone_Containers-Project'
-    cliProjectName: 'Containers Project'
-    cliSources: '.'
+            - task: SonarCloudPrepare@1
+              inputs:
+                SonarCloud: 'SonarCloud'
+                organization: 'lmigone'
+                scannerMode: 'CLI'
+                configMode: 'manual'
+                cliProjectKey: 'lmigone_Containers-Project'
+                cliProjectName: 'Containers Project'
+                cliSources: '.'
 
-- task: SonarCloudAnalyze@1
-  inputs:
-    jdkversion: 'JAVA_HOME_17_X64'
+            - task: SonarCloudAnalyze@1
+              inputs:
+                jdkversion: 'JAVA_HOME_17_X64'
 
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
+            - task: SonarCloudPublish@1
+              inputs:
+                pollingTimeoutSec: '300'
