@@ -33,7 +33,3 @@ stages:
             - task: SonarCloudPublish@1
               inputs:
                 pollingTimeoutSec: '300'
-            
-            - task: PublishCodeCoverageResults@2
-              inputs:
-                summaryFileLocation: '$(Build.SourcesDirectory)/sonar.sources'
