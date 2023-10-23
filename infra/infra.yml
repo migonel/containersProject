@@ -24,7 +24,7 @@ stages:
                   resourceGroupName: $(var_resourceGroupName)
                   location: $(var_location)
               
-              Deploy Resource Group
+              #Deploy Resource Group
               - template: ${{variables['System.DefaultWorkingDirectory']}}/infra/templates/azure-container-registry.yml
                 parameters:
                   azureConnection: ${{variables.azureConnection}}
