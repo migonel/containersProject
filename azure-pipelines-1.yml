@@ -1,0 +1,24 @@
+trigger:
+- none
+
+pool:
+  name: Self-Hosted
+
+stages:
+  - stage: 'POC'
+    jobs:
+    - deployment: 'Checkmarx'
+      environment: 'POC'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - checkout: self
+              fetchDepth: 0
+
+            - task: Checkmarx AST@2
+              inputs:
+                CheckmarxService: 'Checkmarx'
+                projectName: '$(Build.Repository.Name)'
+                branchName: '$(Build.SourceBranchName)'
+                tenantName: 'nfr_lugapel-ast'
