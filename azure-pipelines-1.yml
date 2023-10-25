@@ -17,6 +17,7 @@ stages:
               fetchDepth: 0
 
             - task: Checkmarx AST@2
+              timeoutInMinutes: 180
               inputs:
                 CheckmarxService: 'Checkmarx'
                 projectName: '$(Build.Repository.Name)'
