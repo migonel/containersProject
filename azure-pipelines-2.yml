@@ -1,0 +1,39 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- none
+
+pool:
+  name: Self-Hosted
+
+stages:
+  - stage: 'POC'
+    jobs:
+    - deployment: 'SonarCloud'
+      environment: 'POC'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - checkout: self
+              fetchDepth: 0
+            
+            - task: SonarQubePrepare@5
+              inputs:
+                SonarQube: 'SonarQube'
+                scannerMode: 'CLI'
+                configMode: 'manual'
+                cliProjectKey: 'testingprojectkey'
+                cliProjectName: 'Containers Project'
+                cliSources: '.'
+            
+            - task: SonarQubeAnalyze@5
+              inputs:
+                jdkversion: 'JAVA_HOME_11_X64'
+            
+            - task: SonarQubePublish@5
+              inputs:
+                pollingTimeoutSec: '300'
