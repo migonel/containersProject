@@ -24,9 +24,8 @@ stages:
             - task: SonarQubePrepare@5
               inputs:
                 SonarQube: 'SonarQube'
-                scannerMode: 'MSBuild'
-                projectKey: 'testingprojectkey'
-                projectName: 'testingprojectkey'
+                scannerMode: 'CLI'
+                configMode: 'file'
             
             - task: SonarQubeAnalyze@5
               inputs:
