@@ -26,8 +26,8 @@ stages:
                 SonarQube: 'SonarQube'
                 scannerMode: 'CLI'
                 configMode: 'manual'
-                cliProjectKey: 'Containers Project'
-                cliProjectName: 'Containers Project'
+                cliProjectKey: 'ContainersProject'
+                cliProjectName: 'ContainersProject'
                 cliSources: '$(Build.SourcesDirectory)/mysite'
             
             - task: SonarQubeAnalyze@5
