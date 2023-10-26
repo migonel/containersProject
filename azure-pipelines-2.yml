@@ -12,7 +12,7 @@ pool:
 stages:
   - stage: 'POC'
     jobs:
-    - deployment: 'SonarCloud'
+    - deployment: 'SonarQube'
       environment: 'POC'
       strategy:
         runOnce:
