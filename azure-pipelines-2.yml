@@ -25,7 +25,10 @@ stages:
               inputs:
                 SonarQube: 'SonarQube'
                 scannerMode: 'CLI'
-                configMode: 'file'
+                configMode: 'manual'
+                cliProjectKey: 'testingprojectkey'
+                cliProjectName: 'testingprojectkey'
+                cliSources: '$(Build.SourceBranchName)'
             
             - task: SonarQubeAnalyze@5
               inputs:
