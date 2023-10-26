@@ -28,7 +28,7 @@ stages:
                 configMode: 'manual'
                 cliProjectKey: 'testingprojectkey'
                 cliProjectName: 'testingprojectkey'
-                cliSources: '$(Build.SourceBranchName)'
+                cliSources: '$(Build.SourcesDirectory)'
             
             - task: SonarQubeAnalyze@5
               inputs:
