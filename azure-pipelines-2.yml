@@ -28,7 +28,7 @@ stages:
                 configMode: 'manual'
                 cliProjectKey: 'testingprojectkey'
                 cliProjectName: 'testingprojectkey'
-                cliSources: './containersProject/mysite'
+                cliSources: '.'
             
             - task: SonarQubeAnalyze@5
               inputs:
